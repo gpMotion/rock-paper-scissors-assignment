@@ -2,10 +2,24 @@
     <head>My Rock Paper Scissors assignment</head>
     <body>
         <script>
-            function computerplay(computerselection){
-                return 'Rock'|| 'Paper' || 'Scissors'
+         function computerplay(){
+            let computerselection = Math.floor(Math.random() * 2);
+
+                if (computerselection = 0){
+                    let computerans = 'rock';
+                 }
+    
+
+                else if (computerselection = 1) {
+                    let computerans = 'paper';
+                }
+    
+                 else {
+                    let computerans = 'scissors';
+                }
+
+            console.log(computerans)
             }
-            console.log(computerselection)
         </script>
     </body>
 </html>
