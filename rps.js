@@ -60,7 +60,7 @@ function playRound(computerSelection, playerSelection) { //compares player selec
 
 }
 
-function game(){
+function game(){ //Plays a game of 5 rounds, adding to the round counter up to 5 before ending the game
     for (let roundNum = 1; roundNum<6; roundNum++);
     console.log('Round number ' + roundNum + ' ... 3. 2. 1. Throw!');
 
@@ -71,10 +71,22 @@ function game(){
     let round = playRound(computerSelection, playerSelection);
     console.log(round)
 
-    let score = ('Player Score: ' + playerScore + ' CPU Score: ' + computerScore)
-    console.log(score)
+    let score = 'Player Score: ' + playerScore + ', CPU Score: ' + computerScore + '.';
+    console.log(score)    
 
 
-
-    
+    console.log('Final scores are... You scored ' + playerScore + ' and the CPU scored ' + computerScore)
+    if (playerScore === computerScore) {
+        console.log('It was a tie!');
+    }
+    else if (playerScore > computerScore){
+        console.log('Wow, you won! Congratulations!');
+    }
+    else {
+        console.log('Too bad! The CPU clinched the victory. Try again next time');
+    }
 }
+
+game();
+
+
