@@ -1,5 +1,6 @@
 let computerScore = 0; //Sets player score
 let playerScore = 0; //Sets computer score
+let roundNum = 1; //Sets round number
 
 function computerPlay() {
     let answer = Math.floor((Math.random() * 3) + 1) // picks a random number from 1 to 3
@@ -61,11 +62,11 @@ function playRound(computerSelection, playerSelection) { //compares player selec
 }
 
 function game(){ //Plays a game of 5 rounds, adding to the round counter up to 5 before ending the game
-    for (let roundNum = 1; roundNum<6; roundNum++);
+    for (let roundNum = 1; roundNum<6; roundNum++) {
     console.log('Round number ' + roundNum + ' ... 3. 2. 1. Throw!');
 
     let playerSelection = playerHand(prompt('Rock, paper or scissors?', ''));
-    let computerSelection = computerPlay;
+    let computerSelection = computerPlay();
     console.log('You threw a ' + playerSelection + ', the CPU threw a ' + computerSelection);
 
     let round = playRound(computerSelection, playerSelection);
@@ -73,6 +74,7 @@ function game(){ //Plays a game of 5 rounds, adding to the round counter up to 5
 
     let score = 'Player Score: ' + playerScore + ', CPU Score: ' + computerScore + '.';
     console.log(score)    
+    }
 
 
     console.log('Final scores are... You scored ' + playerScore + ' and the CPU scored ' + computerScore)
