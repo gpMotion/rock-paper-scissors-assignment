@@ -27,7 +27,6 @@ function playerHand(playerChoice) { //takes player choice and makes it all lower
 }
 
 function playRound(computerSelection, playerSelection) { //compares player selection and computer selection and picks a winner
-    playerSelection.toLowerCase()
     if (playerSelection === computerSelection){
         return 'The Game is a draw! Try again!';
     }
@@ -67,6 +66,9 @@ function game(){ //Plays a game of 5 rounds, adding to the round counter up to 5
 
     let playerSelection = playerHand(prompt('Rock, paper or scissors?', ''));
     let computerSelection = computerPlay();
+        if (playerSelection == 'undefined'){
+            let playerSelection = playerHand(prompt('Please type rock, paper or scissors', ''))
+        }
     console.log('You threw a ' + playerSelection + ', the CPU threw a ' + computerSelection);
 
     let round = playRound(computerSelection, playerSelection);
